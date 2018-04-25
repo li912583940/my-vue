@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="import" href="./INC/CSS.html">
+	<link rel="import" href="./INC/JS.html"/>
+</head>
+<body>
+	<div id="myabc">
+		{{aas}}
+	</div>
+	
+	<div id="mybbc">
+		{{ssg}}
+	</div>
+
+</body>
+
+<script>
+	var _vue = new Vue({
+		el : "#myabc",
+		data : {
+			"aas" : "aasvalue",
+			"bbs" : 1122
+		}
+	});
+	
+	new Vue({
+		el : "#mybbc",
+		data : {
+			"ssg" : 77897
+		}
+	});
+</script>
+</html>
