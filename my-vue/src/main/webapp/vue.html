@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="import" href="./INC/CSS.html">
+	<link rel="import" href="./INC/JS.html"/>
+</head>
+<body>
+	<div id="app">
+  <h1>Hello App!</h1>
+  <p>
+    <router-link to="/foo">Go to Foo</router-link>
+    <a onclick="aa();">aa</a>
+    
+  </p>
+  <!-- 路由出口 -->
+  <!-- 路由匹配到的组件将渲染在这里 -->
+  <router-view></router-view>
+  </div>
+	
+</body>
+
+<script>
+
+	function aa(){
+		console.log("aaaa");
+		router.push('./view/foo.vue');
+	}
+	
+	//const Foo = require('./view/foo.vue');
+	 var Foo = require(['./view/foo'],function(){
+		 
+	 }); 
+		    
+	//Foo = {template: '<div>adadad</div>'}
+	//import Foo from './view/foo.vue';
+	const routes = [
+   	  { path: '/foo', component: Foo }
+   	]
+	const router = new VueRouter({
+		 routes
+	})
+
+	// 4. 创建和挂载根实例。
+	// 记得要通过 router 配置参数注入路由，
+	// 从而让整个应用都有路由功能
+	const app = new Vue({
+	  router
+	}).$mount('#app')
+</script>
+</html>
